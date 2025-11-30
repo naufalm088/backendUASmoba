@@ -50,3 +50,7 @@ $routes->group('produk', function($routes) {
     $routes->delete('(:num)', 'ProdukController::delete/$1');
 });
 
+$routes->group('api', function($routes){
+    $routes->resource('resep', ['controller'=>'Api\Resep']);
+});
+
