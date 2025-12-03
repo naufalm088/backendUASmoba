@@ -1,0 +1,332 @@
+ERROR - 2025-12-03 02:39:50 --> mysqli_sql_exception: Table 'uasmoba1.member' doesn't exist in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\RegistrasiController.php(33): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\RegistrasiController->create()
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrasiController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+CRITICAL - 2025-12-03 02:39:50 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'uasmoba1.member' doesn't exist
+[Method: POST, Route: registrasi]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Controllers\RegistrasiController.php(33): CodeIgniter\BaseModel->first()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RegistrasiController->create()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrasiController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 02:39:50 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'uasmoba1.member' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `member`
+WHERE `email` = \'Mery@gmail.com\'
+ LIMIT 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `member`
+WHERE `email` = \'Mery@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 4 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 6 APPPATH\Controllers\RegistrasiController.php(33): CodeIgniter\BaseModel->first()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RegistrasiController->create()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrasiController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 02:39:50 --> [Caused by] mysqli_sql_exception: Table 'uasmoba1.member' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `member`
+WHERE `email` = \'Mery@gmail.com\'
+ LIMIT 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `member`
+WHERE `email` = \'Mery@gmail.com\'
+ LIMIT 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `member`
+WHERE `email` = \'Mery@gmail.com\'
+ LIMIT 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 5 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 7 APPPATH\Controllers\RegistrasiController.php(33): CodeIgniter\BaseModel->first()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RegistrasiController->create()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegistrasiController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-03 02:41:46 --> mysqli_sql_exception: Table 'uasmoba1.member_token' doesn't exist in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `me...', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `me...')
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `me...')
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `me...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\backendUASmoba\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\backendUASmoba\app\Controllers\LoginController.php(44): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\LoginController->login()
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#10 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#15 {main}
+ERROR - 2025-12-03 02:41:50 --> mysqli_sql_exception: Table 'uasmoba1.member_token' doesn't exist in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `me...', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `me...')
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `me...')
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `me...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\backendUASmoba\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\backendUASmoba\app\Controllers\LoginController.php(44): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\LoginController->login()
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#10 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#15 {main}
+ERROR - 2025-12-03 02:41:55 --> mysqli_sql_exception: Table 'uasmoba1.member_token' doesn't exist in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `me...', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `me...')
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `me...')
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `me...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\backendUASmoba\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\backendUASmoba\app\Controllers\LoginController.php(44): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\LoginController->login()
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#10 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#15 {main}
+ERROR - 2025-12-03 02:47:01 --> mysqli_sql_exception: Table 'uasmoba1.member_token' doesn't exist in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `me...', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `me...')
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `me...')
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `me...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\backendUASmoba\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\backendUASmoba\app\Controllers\LoginController.php(44): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\LoginController->login()
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#10 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#15 {main}
+ERROR - 2025-12-03 02:47:03 --> mysqli_sql_exception: Table 'uasmoba1.member_token' doesn't exist in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `me...', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `me...')
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `me...')
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `me...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\backendUASmoba\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\backendUASmoba\app\Controllers\LoginController.php(44): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\LoginController->login()
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#10 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#15 {main}
+ERROR - 2025-12-03 02:47:07 --> mysqli_sql_exception: Table 'uasmoba1.member_token' doesn't exist in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `me...', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `me...')
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `me...')
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `me...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\backendUASmoba\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\backendUASmoba\app\Controllers\LoginController.php(44): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\LoginController->login()
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#10 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#15 {main}
+ERROR - 2025-12-03 02:47:14 --> mysqli_sql_exception: Table 'uasmoba1.member_token' doesn't exist in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `me...', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `me...')
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `me...')
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `me...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\wamp64\www\backendUASmoba\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\wamp64\www\backendUASmoba\app\Controllers\LoginController.php(44): CodeIgniter\Model->insert(Array)
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\LoginController->login()
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#10 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#15 {main}
+CRITICAL - 2025-12-03 02:57:39 --> Error: Class "App\Models\RecipeModel" not found
+[Method: POST, Route: recipes/create]
+in APPPATH\Controllers\ResepController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 02:57:42 --> Error: Class "App\Models\RecipeModel" not found
+[Method: POST, Route: recipes/create]
+in APPPATH\Controllers\ResepController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 02:58:10 --> Error: Class "App\Models\RecipeModel" not found
+[Method: POST, Route: recipes/create]
+in APPPATH\Controllers\ResepController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 02:58:16 --> Error: Class "App\Models\RecipeModel" not found
+[Method: POST, Route: recipes/create]
+in APPPATH\Controllers\ResepController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 03:00:21 --> Error: Class "App\Models\RecipeModel" not found
+[Method: POST, Route: recipes/create]
+in APPPATH\Controllers\ResepController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 03:00:57 --> Error: Class "App\Models\RecipeModel" not found
+[Method: POST, Route: recipes/create]
+in APPPATH\Controllers\ResepController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 03:01:04 --> Error: Class "App\Models\RecipeModel" not found
+[Method: POST, Route: recipes/create]
+in APPPATH\Controllers\ResepController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 03:07:01 --> Error: Class "App\Models\RecipeModel" not found
+[Method: POST, Route: recipes/create]
+in APPPATH\Controllers\ResepController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 03:07:15 --> Error: Class "App\Models\RecipeModel" not found
+[Method: POST, Route: recipes/create]
+in APPPATH\Controllers\ResepController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 03:07:21 --> Error: Class "App\Models\RecipeModel" not found
+[Method: POST, Route: recipes/create]
+in APPPATH\Controllers\ResepController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 03:07:29 --> Error: Class "App\Models\RecipeModel" not found
+[Method: POST, Route: recipes/create]
+in APPPATH\Controllers\ResepController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 03:07:36 --> Error: Class "App\Models\RecipeModel" not found
+[Method: POST, Route: recipes/create]
+in APPPATH\Controllers\ResepController.php on line 24.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->create()
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')

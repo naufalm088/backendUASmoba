@@ -29,28 +29,40 @@ $routes->post('logout', 'LogoutController::logout');
 
 // Grup routing untuk '/produk'
 // Semua rute di dalam grup ini akan memiliki awalan '/produk'
-$routes->group('produk', function($routes) {
+//$routes->group('produk', function($routes) {
 
     // GET /produk -> ProdukController::list()
-    $routes->get('/', 'ProdukController::list');
+  //  $routes->get('/', 'ProdukController::list');
 
     // (:num) adalah placeholder CI4 untuk angka (ID)
     // $1 akan memasukkan angka tersebut sebagai parameter
 
     // GET /produk/123 -> ProdukController::detail(123)
-    $routes->get('(:num)', 'ProdukController::detail/$1');
+   // $routes->get('(:num)', 'ProdukController::detail/$1');
 
     // POST /produk -> ProdukController::create()
-    $routes->post('/', 'ProdukController::create');
+   // $routes->post('/', 'ProdukController::create');
 
     // PUT /produk/123 -> ProdukController::update(123)
-    $routes->put('(:num)', 'ProdukController::update/$1');
+   // $routes->put('(:num)', 'ProdukController::update/$1');
 
     // DELETE /produk/123 -> ProdukController::delete(123)
-    $routes->delete('(:num)', 'ProdukController::delete/$1');
-});
+//     $routes->delete('(:num)', 'ProdukController::delete/$1');
+// });
 
-$routes->group('api', function($routes){
-    $routes->resource('resep', ['controller'=>'Api\Resep']);
-});
+// $routes->group('api', function($routes){
+//     $routes->resource('resep', ['controller'=>'Api\Resep']);
+// });
 
+$routes->post('/auth/login', 'AuthController::login');
+$routes->post('/auth/register', 'AuthController::register');
+
+$routes->post('/recipes/create', 'ResepController::create');
+$routes->get('/recipes/user/(:num)', 'RecipeController::user/$1');
+
+$routes->get('/profile/(:num)', 'ProfileController::get/$1');
+$routes->post('/profile/update', 'ProfileController::update');
+
+$routes->get('test-model', function() {
+    return var_export(class_exists(\App\Models\RecipeModel::class), true);
+});
