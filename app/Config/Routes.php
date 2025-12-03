@@ -58,14 +58,36 @@ $routes->post('/auth/login', 'AuthController::login');
 $routes->post('/auth/register', 'AuthController::register');
 
 //$routes->post('/recipes/create', 'ResepController::create');
-$routes->resource('resep', ['controller' => 'ResepController']);
+ 
+    $routes->resource('resep', ['controller' => 'ResepController']);
 
-$routes->resource('resep', ['controller' => 'ResepController']);
-$routes->get('/recipes/user/(:num)', 'ResepController::user/$1');
+$routes->get('/resep/user/(:num)', 'ResepController::user/$1');
 
 $routes->get('/profile/(:num)', 'ProfileController::get/$1');
 $routes->post('/profile/update', 'ProfileController::update');
 
+
 $routes->get('test-model', function() {
     return var_export(class_exists(\App\Models\RecipeModel::class), true);
+
+
+
+
 });
+
+$routes->group('resep', function($routes) {
+    // GET /resep/populer -> ResepController::popular()
+    $routes->get('populer', 'ResepController::popular');
+
+    // GET /resep/terbaru -> ResepController::latest');
+    $routes->get('terbaru', 'ResepController::latest');
+   
+    // Rute resource utama (index, create, delete, dll)
+   // $routes->resource('/', ['controller' => 'ResepController']);
+
+    $routes->get('filter/(:any)', 'ResepController::filterByCategory/$1');
+
+    $routes->get('search/(:any)', 'ResepController::search/$1');
+});
+
+

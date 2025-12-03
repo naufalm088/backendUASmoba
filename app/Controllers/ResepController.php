@@ -68,4 +68,58 @@ class ResepController extends ResourceController
             $this->model->where("user_id", $id)->findAll()
         );
     }
+
+    public function latest(){
+        $latesrRecipes = $this ->model
+        ->orderBy('created_at', 'DESC')
+        ->limit(5)
+        ->findAll();
+
+        return $this->respond([
+            'status' => true,
+            'data' => $latesrRecipes
+        ]);
+    }
+
+    public function popular()
+    {
+        // Mengambil 5 resep yang paling 'populer' (diurutkan berdasarkan ID terlama/terkecil untuk contoh)
+        $popularRecipes = $this->model
+            ->orderBy('id', 'ASC')
+            ->limit(5)
+            ->findAll();
+            
+        // Jika Anda sudah menambahkan kolom 'rating' ke database:
+        // $popularRecipes = $this->model->orderBy('rating', 'DESC')->limit(5)->findAll();
+
+        return $this->respond([
+            'status' => true,
+            'data' => $popularRecipes
+        ]);
+    }
+
+    public function filterByCategory($kategori){
+        $filteredRecipes = $this->model
+        ->where('kategori', $kategori)
+        ->findAll();
+
+        return $this->respond([
+            'status' =>true,
+            'data' => $filteredRecipes
+        ]);
+    }
+
+    public function search($keyword){
+        $searchResults = $this->model 
+        ->like('title', $keyword, 'both')
+        ->orLike('ingredients', $keyword, 'both')
+        ->findAll();
+
+        return $this->respond([
+        'status' => true,
+        'data' => $searchResults
+    ]);
+
+    }
+
 }

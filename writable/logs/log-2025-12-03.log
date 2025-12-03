@@ -491,3 +491,367 @@ in SYSTEMPATH\RESTful\BaseResource.php on line 74.
  6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
  8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:08:31 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: OPTIONS, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:08:35 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: OPTIONS, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:08:37 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: OPTIONS, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:08:38 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: OPTIONS, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:08:40 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: OPTIONS, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:08:42 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: OPTIONS, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:08:44 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: OPTIONS, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:09:13 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: OPTIONS, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:09:34 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: OPTIONS, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:09:46 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: OPTIONS, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:10:06 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: OPTIONS, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:10:41 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: GET, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:11:17 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: GET, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:11:21 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: GET, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:12:16 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: GET, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:12:17 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: GET, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:12:19 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: GET, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:12:21 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: GET, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:12:22 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: GET, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:12:22 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: GET, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:12:22 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: GET, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:12:23 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: GET, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:12:23 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: GET, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:14:09 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: GET, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:14:12 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: GET, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:23:06 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: GET, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:23:08 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: GET, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-03 21:23:09 --> Error: Object of class CodeIgniter\Router\RouteCollection could not be converted to string
+[Method: GET, Route: resep]
+in APPPATH\Config\Routes.php on line 88.
+ 1 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->{closure:C:\wamp64\www\backendUASmoba\app\Config\Routes.php:76}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(76): CodeIgniter\Router\RouteCollection->group('resep', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(339): require('C:\\wamp64\\www\\backendUASmoba\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
