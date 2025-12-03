@@ -57,8 +57,11 @@ $routes->post('logout', 'LogoutController::logout');
 $routes->post('/auth/login', 'AuthController::login');
 $routes->post('/auth/register', 'AuthController::register');
 
-$routes->post('/recipes/create', 'ResepController::create');
-$routes->get('/recipes/user/(:num)', 'RecipeController::user/$1');
+//$routes->post('/recipes/create', 'ResepController::create');
+$routes->resource('resep', ['controller' => 'ResepController']);
+
+$routes->resource('resep', ['controller' => 'ResepController']);
+$routes->get('/recipes/user/(:num)', 'ResepController::user/$1');
 
 $routes->get('/profile/(:num)', 'ProfileController::get/$1');
 $routes->post('/profile/update', 'ProfileController::update');

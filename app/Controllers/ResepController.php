@@ -5,6 +5,7 @@ use CodeIgniter\RESTful\ResourceController;
 
 class ResepController extends ResourceController
 {
+   protected $modelName = 'App\Models\RecipeModel';
     /**
      * @var \CodeIgniter\HTTP\IncomingRequest $request
      */
@@ -62,9 +63,9 @@ class ResepController extends ResourceController
 
      public function user($id)
     {
-        $recipe = new RecipeModel();
+       // $recipe = new RecipeModel();
         return $this->respond(
-            $recipe->where("user_id", $id)->findAll()
+            $this->model->where("user_id", $id)->findAll()
         );
     }
 }
