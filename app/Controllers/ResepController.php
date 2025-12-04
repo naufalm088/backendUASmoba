@@ -60,6 +60,39 @@ class ResepController extends ResourceController
             "message" => "Resep berhasil ditambahkan"
         ]);
     }
+    public function delete($id = null)
+{
+    if ($this->model->delete($id)) {
+        return $this->respondDeleted([
+            'status' => true,
+            'message' => 'Resep berhasil dihapus',
+        ]);
+    }
+    return $this->failNotFound('Resep dengan ID ' . $id . ' tidak ditemukan atau gagal dihapus');
+}
+
+public function update($id = null)
+{
+    // Ambil semua data dari request
+    $data = $this->request->getRawInput();
+    
+    // Khusus untuk ResourceController yang menggunakan PUT/PATCH,
+    // kita perlu mengambil file secara terpisah jika menggunakan form-data, 
+    // namun karena ini PUT/PATCH JSON, kita anggap data text/JSON yang dikirim.
+    // Jika Anda ingin mengupdate gambar, Anda harus menggunakan method PATCH
+    // yang mengirim data multi-part. Namun, untuk kesederhanaan, kita asumsikan 
+    // ini hanya update data teks/non-file.
+
+    if ($this->model->update($id, $data)) {
+        return $this->respond([
+            'status' => true,
+            'message' => 'Resep berhasil diperbarui',
+            'data' => $data // Opsional: kembalikan data yang diperbarui
+        ]);
+    }
+
+    return $this->fail('Gagal memperbarui resep.', 400);
+}
 
      public function user($id)
     {
@@ -121,5 +154,20 @@ class ResepController extends ResourceController
     ]);
 
     }
+public function show($id = null)
+{
+    // 1. Cari resep berdasarkan ID
+    $resep = $this->model->find($id);
 
+    if ($resep) {
+        // 2. Jika ditemukan, kirim respons 200 (OK)
+        return $this->respond([
+            'status' => true,
+            'data' => $resep
+        ]);
+    }
+
+    // 3. Jika tidak ditemukan, kirim respons 404 (Not Found)
+    return $this->failNotFound('Resep dengan ID ' . $id . ' tidak ditemukan');
+}
 }

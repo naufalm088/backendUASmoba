@@ -59,7 +59,8 @@ $routes->post('/auth/register', 'AuthController::register');
 
 //$routes->post('/recipes/create', 'ResepController::create');
  
-    $routes->resource('resep', ['controller' => 'ResepController']);
+$routes->post('resep/create', 'ResepController::create');
+$routes->resource('resep', ['controller' => 'ResepController']);
 
 $routes->get('/resep/user/(:num)', 'ResepController::user/$1');
 
