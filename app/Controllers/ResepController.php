@@ -73,39 +73,91 @@ class ResepController extends ResourceController
 
 public function update($id = null)
 {
-    // Ambil semua data dari request
-    $data = $this->request->getRawInput();
-    
-    // Khusus untuk ResourceController yang menggunakan PUT/PATCH,
-    // kita perlu mengambil file secara terpisah jika menggunakan form-data, 
-    // namun karena ini PUT/PATCH JSON, kita anggap data text/JSON yang dikirim.
-    // Jika Anda ingin mengupdate gambar, Anda harus menggunakan method PATCH
-    // yang mengirim data multi-part. Namun, untuk kesederhanaan, kita asumsikan 
-    // ini hanya update data teks/non-file.
+    // Validasi ID
+    if (!$id) {
+        return $this->failNotFound('ID resep tidak diberikan.');
+    }
 
     if (!$this->model->find($id)) {
         return $this->failNotFound('Resep dengan ID ' . $id . ' tidak ditemukan.');
     }
-    $data['id'] = $id;
 
-    if ($this->model->update($id, $data)) {
+    // Ambil data dari request
+    $data = [];
+    
+    // Cek apakah request adalah JSON atau form-data
+    $contentType = $this->request->getHeaderLine('Content-Type');
+    
+    if (strpos($contentType, 'application/json') !== false) {
+        // JSON request
+        $rawInput = $this->request->getJSON();
+        if ($rawInput && is_object($rawInput)) {
+            $data = (array) $rawInput;
+        }
+    } else {
+        // Form-data request
+        $data = $this->request->getPost();
+    }
+
+    // Debugging - log data yang diterima
+    log_message('debug', 'Update ResepController - ID: ' . $id . ', Data: ' . json_encode($data));
+
+    // Hapus ID dari data update
+    unset($data['id']);
+
+    // Filter hanya field yang allowed di model
+    $filteredData = [];
+    $allowedFields = $this->model->allowedFields;
+    
+    foreach ($data as $key => $value) {
+        if (in_array($key, $allowedFields)) {
+            // Abaikan field kosong
+            if ($value !== null && $value !== '') {
+                $filteredData[$key] = $value;
+            }
+        }
+    }
+
+    // Validasi minimal ada data yang diubah
+    if (empty($filteredData)) {
+        return $this->fail('Tidak ada data yang diubah.', 400);
+    }
+
+    // Handle upload gambar jika ada
+    $image = $this->request->getFile('image');
+    if ($image && $image->isValid()) {
+        $imageName = $image->getRandomName();
+        $image->move('uploads/recipes/', $imageName);
+        $imagePath = 'uploads/recipes/' . $imageName;
+
+        // Compress gambar jika terlalu besar
+        if (filesize($imagePath) > 500000) {
+            \Config\Services::image()
+                ->withFile($imagePath)
+                ->resize(800, 600, true, 'auto')
+                ->save($imagePath);
+        }
+        $filteredData['image'] = $imageName;
+    }
+
+    // Lakukan update dengan data yang sudah difilter
+    if ($this->model->update($id, $filteredData)) {
         return $this->respond([
             'status' => true,
             'message' => 'Resep berhasil diperbarui',
-            'data' => $data // Opsional: kembalikan data yang diperbarui
+            'data' => $filteredData
         ]);
     }
 
-    // 💡 JIKA GAGAL (Status 500) kemungkinan Model Error:
-    // Tampilkan error validasi model untuk debug
+    // Tampilkan error jika ada
     if ($this->model->errors()) {
         return $this->fail([
-            'message' => 'Gagal memperbarui resep karena Model Error.',
+            'message' => 'Gagal memperbarui resep.',
             'errors' => $this->model->errors()
-        ], 500, 'Model Error'); // <-- Tampilkan 500 dan error detail
+        ], 400);
     }
 
-    return $this->fail('Gagal memperbarui resep.', 400);
+    return $this->fail('Gagal memperbarui resep.', 500);
 }
 
      public function user($id)
@@ -168,6 +220,110 @@ public function update($id = null)
     ]);
 
     }
+    
+        // Bookmark / save a recipe for a user (saved recipes)
+        public function bookmark()
+        {
+            // Terima baik JSON ataupun form-data
+            $contentType = $this->request->getHeaderLine('Content-Type');
+            if (strpos($contentType, 'application/json') !== false) {
+                $input = $this->request->getJSON(true) ?: [];
+            } else {
+                $input = $this->request->getPost() ?: [];
+            }
+
+            // logging untuk debugging
+            log_message('debug', 'Bookmark input: ' . json_encode($input));
+
+            $userId = isset($input['user_id']) ? (int) $input['user_id'] : null;
+            $recipeId = isset($input['recipe_id']) ? (int) $input['recipe_id'] : null;
+
+            if (empty($userId) || empty($recipeId)) {
+                return $this->fail('Parameter `user_id` dan `recipe_id` diperlukan dan harus berupa angka.', 400);
+            }
+
+            // Pastikan resep ada
+            $recipe = $this->model->find($recipeId);
+            if (!$recipe) {
+                return $this->failNotFound('Resep dengan ID ' . $recipeId . ' tidak ditemukan.');
+            }
+
+            // Gunakan model SavedRecipeModel
+            $savedModel = new \App\Models\SavedRecipeModel();
+
+            // Cek apakah sudah disimpan sebelumnya
+            $exists = $savedModel->where('user_id', $userId)->where('recipe_id', $recipeId)->first();
+            if ($exists) {
+                return $this->respond([
+                    'status' => true,
+                    'message' => 'Resep sudah tersimpan sebelumnya.'
+                ]);
+            }
+
+            $inserted = $savedModel->insert([
+                'user_id' => $userId,
+                'recipe_id' => $recipeId,
+                'created_at' => date('Y-m-d H:i:s')
+            ]);
+
+            if ($inserted === false) {
+                // Ambil error dari model jika ada
+                $errors = $savedModel->errors();
+                log_message('error', 'Failed to insert saved_recipes: ' . json_encode($errors));
+                return $this->fail('Gagal menyimpan resep.', 500);
+            }
+
+            return $this->respondCreated([
+                'status' => true,
+                'message' => 'Resep berhasil disimpan.'
+            ]);
+        }
+
+        // Ambil daftar resep yang disimpan oleh user
+        public function saved($userId = null)
+        {
+            if (!$userId) {
+                return $this->fail('User ID diperlukan.', 400);
+            }
+
+            $savedModel = new \App\Models\SavedRecipeModel();
+            $savedRows = $savedModel
+                ->where('saved_recipes.user_id', $userId)
+                ->orderBy('saved_recipes.created_at', 'DESC')
+                ->findAll();
+
+            $base = rtrim(base_url(), '/');
+            $mapped = [];
+
+            foreach ($savedRows as $row) {
+                $recipeId = isset($row['recipe_id']) ? $row['recipe_id'] : null;
+                if (!$recipeId) continue;
+
+                // Ambil seluruh detail resep agar sama persis seperti detail view
+                $recipe = $this->model->find($recipeId);
+                if (!$recipe) continue;
+
+                $imagePath = isset($recipe['image']) && $recipe['image'] ? $recipe['image'] : null;
+                $recipe['image_url'] = $imagePath ? $base . '/' . ltrim($imagePath, '/') : null;
+                // camelCase alias untuk frontend
+                $recipe['imageUrl'] = $recipe['image_url'];
+                // alias name jika frontend mengharapkan
+                if (!isset($recipe['name'])) {
+                    $recipe['name'] = isset($recipe['title']) ? $recipe['title'] : null;
+                }
+                // include saved timestamp from saved_recipes row if available
+                $recipe['saved_at'] = isset($row['created_at']) ? $row['created_at'] : null;
+                $recipe['savedAt'] = $recipe['saved_at'];
+
+                $mapped[] = $recipe;
+            }
+
+            return $this->respond([
+                'status' => true,
+                'data' => $mapped
+            ]);
+        }
+
 public function show($id = null)
 {
     // 1. Cari resep berdasarkan ID
