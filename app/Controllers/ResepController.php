@@ -83,12 +83,26 @@ public function update($id = null)
     // yang mengirim data multi-part. Namun, untuk kesederhanaan, kita asumsikan 
     // ini hanya update data teks/non-file.
 
+    if (!$this->model->find($id)) {
+        return $this->failNotFound('Resep dengan ID ' . $id . ' tidak ditemukan.');
+    }
+    $data['id'] = $id;
+
     if ($this->model->update($id, $data)) {
         return $this->respond([
             'status' => true,
             'message' => 'Resep berhasil diperbarui',
             'data' => $data // Opsional: kembalikan data yang diperbarui
         ]);
+    }
+
+    // 💡 JIKA GAGAL (Status 500) kemungkinan Model Error:
+    // Tampilkan error validasi model untuk debug
+    if ($this->model->errors()) {
+        return $this->fail([
+            'message' => 'Gagal memperbarui resep karena Model Error.',
+            'errors' => $this->model->errors()
+        ], 500, 'Model Error'); // <-- Tampilkan 500 dan error detail
     }
 
     return $this->fail('Gagal memperbarui resep.', 400);
