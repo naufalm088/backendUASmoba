@@ -60,7 +60,13 @@ $routes->post('/auth/register', 'AuthController::register');
 //$routes->post('/recipes/create', 'ResepController::create');
  
 $routes->post('resep/create', 'ResepController::create');
+// 'resep/simpan' should bookmark (save) a recipe, not create one
+$routes->post('resep/simpan', 'ResepController::bookmark');
+// Endpoint untuk menyimpan/bookmark resep (tidak membuat resep baru)
+$routes->post('resep/bookmark', 'ResepController::bookmark');
 $routes->resource('resep', ['controller' => 'ResepController']);
+// Ambil resep yang disimpan user
+$routes->get('resep/saved/(:num)', 'ResepController::saved/$1');
 
 $routes->get('/resep/user/(:num)', 'ResepController::user/$1');
 
