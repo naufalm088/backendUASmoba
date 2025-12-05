@@ -8,7 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 // app/Config/Routes.php
 
-// ... (kode routing bawaan CI4) ...
+// ... (kode routing bawaan CI4) ....
 
 /**
  * --------------------------------------------------------------------
@@ -76,19 +76,51 @@ $routes->get('test-model', function() {
 
 });
 
+// app/Config/Routes.php (Ganti bagian group 'resep' Anda dengan ini)
+
 $routes->group('resep', function($routes) {
     // GET /resep/populer -> ResepController::popular()
     $routes->get('populer', 'ResepController::popular');
 
     // GET /resep/terbaru -> ResepController::latest');
     $routes->get('terbaru', 'ResepController::latest');
-   
-    // Rute resource utama (index, create, delete, dll)
-   // $routes->resource('/', ['controller' => 'ResepController']);
-
+    
+    // GET /resep/filter/(:any)
     $routes->get('filter/(:any)', 'ResepController::filterByCategory/$1');
 
+    // GET /resep/search/(:any)
     $routes->get('search/(:any)', 'ResepController::search/$1');
+
+    // --- Rute Saved Recipes ---
+    // Sekarang memetakan /resep/simpan ke Controller
+    $routes->post('simpan', 'SavedRecipeController::store'); 
+    
+    // Sekarang memetakan /resep/simpan/hapus ke Controller
+    $routes->delete('simpan/hapus', 'SavedRecipeController::deleteSaved'); 
+    
+    // Sekarang memetakan /resep/simpan/user/(:num) ke Controller
+    $routes->get('simpan/user/(:num)', 'SavedRecipeController::getSavedIdsByUser/$1');
 });
+
+// Hapus atau Nonaktifkan semua rute resep yang tumpang tindih di luar group jika ada.
+// Pastikan tidak ada duplikasi rute POST resep/simpan di luar group.
+
+// $routes->group('resep', function($routes) {
+//     // GET /resep/populer -> ResepController::popular()
+//     $routes->get('populer', 'ResepController::popular');
+
+//     // GET /resep/terbaru -> ResepController::latest');
+//     $routes->get('terbaru', 'ResepController::latest');
+   
+//     // Rute resource utama (index, create, delete, dll)
+//    // $routes->resource('/', ['controller' => 'ResepController']);
+
+//     $routes->get('filter/(:any)', 'ResepController::filterByCategory/$1');
+
+//     $routes->get('search/(:any)', 'ResepController::search/$1');
+//     $routes->post('resep/simpan', 'SavedRecipeController::store');
+//     $routes->delete('resep/simpan/hapus', 'SavedRecipeController::deleteSaved');
+//     $routes->get('resep/simpan/user/(:num)', 'SavedRecipeController::getSavedIdsByUser/$1');
+
 
 
