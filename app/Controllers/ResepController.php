@@ -19,9 +19,31 @@ class ResepController extends ResourceController
         ]);
     }
 
+    public function myRecipes(){
+        $currentUserId = $this->request->user->id ?? null;
+
+        if(empty($currentUserId)){
+            return $this->failUnauthorized('Silahkan login untuk melihat resep kamu.');
+
+        }
+
+        $myRecipes = $this -> model->where('user_id', $currentUserId)->findAll();
+
+        if (empty($myRecipes)) {
+            return $this->respond(['status' => true, 'data' => [], 'message' => 'Anda belum memiliki resep.']);
+        }
+
+        return $this->respond(['status' => true, 'data' => $myRecipes]);
+    }
+
 
     public function create()
     {
+        $currentUserId = $this->request->user->id ?? null;
+        if (empty($currentUserId)){
+            return $this->failUnauthorized('Autentikasi gagal atau ID pengguna tidak ditemukan');
+        }
+
         $resep = new RecipeModel();
            $image = $this->request->getFile('image');
         $imageName = null;
@@ -41,7 +63,7 @@ class ResepController extends ResourceController
         }
 
         $data = [
-            "user_id" => $this->request->getPost("user_id"),
+            "user_id" => $currentUserId,
             "title" => $this->request->getPost("title"),
             "kategori" => $this->request->getPost("kategori"),
             "description" => $this->request->getPost("description"),
@@ -62,6 +84,22 @@ class ResepController extends ResourceController
     }
     public function delete($id = null)
 {
+    $currentUserId = $this->request->user->id ?? null; 
+    
+    if (!$currentUserId) {
+        return $this->failUnauthorized('Anda harus login untuk menghapus resep.');
+    }
+
+    $resep = $this->model->find($id);
+
+    if (!$resep) {
+        return $this->failNotFound('Resep dengan ID ' . $id . ' tidak ditemukan.');
+    }
+
+    if ($resep['user_id'] != $currentUserId) {
+        return $this->failForbidden('Anda tidak memiliki izin untuk menghapus resep ini.');
+    }
+
     if ($this->model->delete($id)) {
         return $this->respondDeleted([
             'status' => true,
@@ -73,14 +111,46 @@ class ResepController extends ResourceController
 
 public function update($id = null)
 {
-    // Validasi ID
+    $currentUserId = $this->request->user->id ?? null; 
+    
+    if (!$currentUserId) {
+        return $this->failUnauthorized('Anda harus login untuk memperbarui resep.');
+    }
+    
+    // 2. Cari resep yang akan diupdate
+    // 2. Cari resep (dan cek ID)
     if (!$id) {
         return $this->failNotFound('ID resep tidak diberikan.');
     }
 
-    if (!$this->model->find($id)) {
+    $resep = $this->model->find($id);
+    if (!$resep) {
         return $this->failNotFound('Resep dengan ID ' . $id . ' tidak ditemukan.');
     }
+
+    // if (!$id || !$resep) {
+    //     return $this->failNotFound('Resep dengan ID ' . $id . ' tidak ditemukan.');
+    // }
+    if ($resep['user_id'] != $currentUserId) {
+        return $this->failForbidden('Anda tidak memiliki izin untuk memperbarui resep ini.');
+    }
+    unset($data['id']);
+    // 5. Filter hanya field yang allowed di model
+    $filteredData = [];
+    $allowedFields = $this->model->allowedFields;
+
+    unset($filteredData['user_id']);
+    if (empty($filteredData)) {
+        return $this->fail('Tidak ada data yang diubah.', 400);
+    }
+    // Validasi ID
+    // if (!$id) {
+    //     return $this->failNotFound('ID resep tidak diberikan.');
+    // }
+
+    // if (!$this->model->find($id)) {
+    //     return $this->failNotFound('Resep dengan ID ' . $id . ' tidak ditemukan.');
+    // }
 
     // Ambil data dari request
     $data = [];
@@ -122,6 +192,7 @@ public function update($id = null)
     if (empty($filteredData)) {
         return $this->fail('Tidak ada data yang diubah.', 400);
     }
+    unset($filteredData['user_id']);
 
     // Handle upload gambar jika ada
     $image = $this->request->getFile('image');
@@ -224,6 +295,10 @@ public function update($id = null)
         // Bookmark / save a recipe for a user (saved recipes)
         public function bookmark()
         {
+            $currentUserId = $this->request->user->id ?? null;
+            if (!$currentUserId) {
+        return $this->failUnauthorized('Anda harus login untuk menyimpan resep.');
+    }
             // Terima baik JSON ataupun form-data
             $contentType = $this->request->getHeaderLine('Content-Type');
             if (strpos($contentType, 'application/json') !== false) {
@@ -235,10 +310,13 @@ public function update($id = null)
             // logging untuk debugging
             log_message('debug', 'Bookmark input: ' . json_encode($input));
 
-            $userId = isset($input['user_id']) ? (int) $input['user_id'] : null;
+           // $userId = isset($input['user_id']) ? (int) $input['user_id'] : null;
             $recipeId = isset($input['recipe_id']) ? (int) $input['recipe_id'] : null;
-
-            if (empty($userId) || empty($recipeId)) {
+            
+if (empty($recipeId)) {
+        return $this->fail('Parameter `recipe_id` diperlukan.', 400); // Hapus pengecekan userId dari sini
+    }
+            if (empty($currentUserId) || empty($recipeId)) {
                 return $this->fail('Parameter `user_id` dan `recipe_id` diperlukan dan harus berupa angka.', 400);
             }
 
@@ -252,7 +330,7 @@ public function update($id = null)
             $savedModel = new \App\Models\SavedRecipeModel();
 
             // Cek apakah sudah disimpan sebelumnya
-            $exists = $savedModel->where('user_id', $userId)->where('recipe_id', $recipeId)->first();
+            $exists = $savedModel->where('user_id', $currentUserId)->where('recipe_id', $recipeId)->first();
             if ($exists) {
                 return $this->respond([
                     'status' => true,
@@ -261,7 +339,7 @@ public function update($id = null)
             }
 
             $inserted = $savedModel->insert([
-                'user_id' => $userId,
+                'user_id' => $currentUserId,
                 'recipe_id' => $recipeId,
                 'created_at' => date('Y-m-d H:i:s')
             ]);
@@ -280,15 +358,25 @@ public function update($id = null)
         }
 
         // Ambil daftar resep yang disimpan oleh user
-        public function saved($userId = null)
+        public function saved()
         {
-            if (!$userId) {
-                return $this->fail('User ID diperlukan.', 400);
-            }
+            //debug
+            
+
+            $currentUserId = $this->request->user->id ?? null; 
+            
+
+    if (!$currentUserId) {
+        return $this->failUnauthorized('User ID diperlukan.');
+    }
+
+            // if (!$userId) {
+            //     return $this->fail('User ID diperlukan.', 400);
+            // }
 
             $savedModel = new \App\Models\SavedRecipeModel();
             $savedRows = $savedModel
-                ->where('saved_recipes.user_id', $userId)
+                ->where('saved_recipes.user_id', $currentUserId)
                 ->orderBy('saved_recipes.created_at', 'DESC')
                 ->findAll();
 
@@ -326,6 +414,13 @@ public function update($id = null)
 
 public function show($id = null)
 {
+    if ($id === 'saved'){
+        return $this->saved();
+    }
+
+    if (!is_numeric($id)){
+        return $this->fail('Id resep harus berupa angka', 400);
+    }
     // 1. Cari resep berdasarkan ID
     $resep = $this->model->find($id);
 

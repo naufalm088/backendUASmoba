@@ -6,127 +6,53 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
-// app/Config/Routes.php
 
-// ... (kode routing bawaan CI4) ....
+// --------------------------------------------------------------------
+// 🔓 AUTH PUBLIK (Tidak perlu Token)
+// --------------------------------------------------------------------
 
-/**
- * --------------------------------------------------------------------
- * API Routes
- * --------------------------------------------------------------------
- */
+// Registrasi dan Login - tanpa /api/ agar URL lebih pendek
+$routes->post('register', 'AuthController::register'); 
+$routes->post('login', 'AuthController::login'); 
 
-// Rute untuk registrasi
-// Memetakan: POST http://.../public/registrasi
-// Ke:         RegistrasiController, fungsi create()
-$routes->post('registrasi', 'RegistrasiController::create');
-
-// Rute untuk login
-// Memetakan: POST http://.../public/login
-// Ke:         LoginController, fungsi login()
-$routes->post('login', 'LoginController::login');
-$routes->post('logout', 'LogoutController::logout');
-
-// Grup routing untuk '/produk'
-// Semua rute di dalam grup ini akan memiliki awalan '/produk'
-//$routes->group('produk', function($routes) {
-
-    // GET /produk -> ProdukController::list()
-  //  $routes->get('/', 'ProdukController::list');
-
-    // (:num) adalah placeholder CI4 untuk angka (ID)
-    // $1 akan memasukkan angka tersebut sebagai parameter
-
-    // GET /produk/123 -> ProdukController::detail(123)
-   // $routes->get('(:num)', 'ProdukController::detail/$1');
-
-    // POST /produk -> ProdukController::create()
-   // $routes->post('/', 'ProdukController::create');
-
-    // PUT /produk/123 -> ProdukController::update(123)
-   // $routes->put('(:num)', 'ProdukController::update/$1');
-
-    // DELETE /produk/123 -> ProdukController::delete(123)
-//     $routes->delete('(:num)', 'ProdukController::delete/$1');
-// });
-
-// $routes->group('api', function($routes){
-//     $routes->resource('resep', ['controller'=>'Api\Resep']);
-// });
-
-$routes->post('/auth/login', 'AuthController::login');
-$routes->post('/auth/register', 'AuthController::register');
-
-//$routes->post('/recipes/create', 'ResepController::create');
- 
-$routes->post('resep/create', 'ResepController::create');
-// 'resep/simpan' should bookmark (save) a recipe, not create one
-$routes->post('resep/simpan', 'ResepController::bookmark');
-// Endpoint untuk menyimpan/bookmark resep (tidak membuat resep baru)
-$routes->post('resep/bookmark', 'ResepController::bookmark');
-$routes->resource('resep', ['controller' => 'ResepController']);
-// Ambil resep yang disimpan user
-$routes->get('resep/saved/(:num)', 'ResepController::saved/$1');
-
-$routes->get('/resep/user/(:num)', 'ResepController::user/$1');
-
-$routes->get('/profile/(:num)', 'ProfileController::get/$1');
-$routes->post('/profile/update', 'ProfileController::update');
-
-
-$routes->get('test-model', function() {
-    return var_export(class_exists(\App\Models\RecipeModel::class), true);
-
-
-
-
+// --------------------------------------------------------------------
+// 🔓 GRUP PUBLIK API
+// --------------------------------------------------------------------
+$routes->group('api', function($routes) {
+    
+    // RESEP PUBLIK
+    $routes->resource('resep', ['controller' => 'ResepController', 'only' => ['index', 'show']]);
+    $routes->get('resep/populer', 'ResepController::popular');
+    $routes->get('resep/terbaru', 'ResepController::latest');
+    $routes->get('resep/filter/(:any)', 'ResepController::filterByCategory/$1');
+    $routes->get('resep/search/(:any)', 'ResepController::search/$1');
+    $routes->get('resep/user/(:num)', 'ResepController::user/$1');
+    
+    // PROFIL PUBLIK
+    $routes->get('profile/(:num)', 'ProfileController::get/$1');
 });
 
-// app/Config/Routes.php (Ganti bagian group 'resep' Anda dengan ini)
-
-$routes->group('resep', function($routes) {
-    // GET /resep/populer -> ResepController::popular()
-    $routes->get('populer', 'ResepController::popular');
-
-    // GET /resep/terbaru -> ResepController::latest');
-    $routes->get('terbaru', 'ResepController::latest');
+// --------------------------------------------------------------------
+// 🔒 GRUP TERLINDUNGI API (PERLU TOKEN)
+// --------------------------------------------------------------------
+$routes->group('api', ['filter' => 'auth'], function($routes) {
     
-    // GET /resep/filter/(:any)
-    $routes->get('filter/(:any)', 'ResepController::filterByCategory/$1');
-
-    // GET /resep/search/(:any)
-    $routes->get('search/(:any)', 'ResepController::search/$1');
-
-    // --- Rute Saved Recipes ---
-    // Sekarang memetakan /resep/simpan ke Controller
-    $routes->post('simpan', 'SavedRecipeController::store'); 
+    // AUTH TERPROTEKSI
+    $routes->post('logout', 'AuthController::logout');
     
-    // Sekarang memetakan /resep/simpan/hapus ke Controller
-    $routes->delete('simpan/hapus', 'SavedRecipeController::deleteSaved'); 
+    // PROFIL TERPROTEKSI
+    $routes->put('profile', 'ProfileController::update');
+    $routes->post('profile/update', 'ProfileController::update'); // Alternatif POST
     
-    // Sekarang memetakan /resep/simpan/user/(:num) ke Controller
-    $routes->get('simpan/user/(:num)', 'SavedRecipeController::getSavedIdsByUser/$1');
+    // RESEP TERPROTEKSI
+    $routes->post('resep', 'ResepController::create');
+    $routes->put('resep/(:num)', 'ResepController::update/$1');
+    $routes->delete('resep/(:num)', 'ResepController::delete/$1');
+    $routes->get('myrecipes', 'ResepController::myRecipes');
+    $routes->get('resep/saved', 'ResepController::saved');
+    $routes->post('resep/bookmark', 'ResepController::bookmark');
+    $routes->delete('resep/bookmark', 'ResepController::unbookmark');
+    
+    // VALIDASI TOKEN
+    $routes->get('validate-token', 'AuthController::validateTokenEndpoint');
 });
-
-// Hapus atau Nonaktifkan semua rute resep yang tumpang tindih di luar group jika ada.
-// Pastikan tidak ada duplikasi rute POST resep/simpan di luar group.
-
-// $routes->group('resep', function($routes) {
-//     // GET /resep/populer -> ResepController::popular()
-//     $routes->get('populer', 'ResepController::popular');
-
-//     // GET /resep/terbaru -> ResepController::latest');
-//     $routes->get('terbaru', 'ResepController::latest');
-   
-//     // Rute resource utama (index, create, delete, dll)
-//    // $routes->resource('/', ['controller' => 'ResepController']);
-
-//     $routes->get('filter/(:any)', 'ResepController::filterByCategory/$1');
-
-//     $routes->get('search/(:any)', 'ResepController::search/$1');
-//     $routes->post('resep/simpan', 'SavedRecipeController::store');
-//     $routes->delete('resep/simpan/hapus', 'SavedRecipeController::deleteSaved');
-//     $routes->get('resep/simpan/user/(:num)', 'SavedRecipeController::getSavedIdsByUser/$1');
-
-
-

@@ -1,5 +1,7 @@
 <?php 
 namespace App\Controllers;
+
+use App\Models\MemberModel;
 use App\Models\UserModel;
 use App\Models\RecipeModel;
 use App\Models\SavedRecipeModel;
@@ -13,7 +15,7 @@ class ProfileController extends ResourceController
     protected $request;
 
     public function get($id){
-        $user = new UserModel();
+        $user = new MemberModel();
         $recipeModel = new RecipeModel();
         $saved = new SavedRecipeModel();
         
@@ -60,7 +62,7 @@ class ProfileController extends ResourceController
 
     public function update($id = null)
     {
-        $user = new UserModel();
+        $user = new MemberModel();
 
         $id = $id ?? $this->request->getPost("id");
 
