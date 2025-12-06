@@ -21,7 +21,9 @@ $routes->post('login', 'AuthController::login');
 $routes->group('api', function($routes) {
     
     // RESEP PUBLIK
-    $routes->resource('resep', ['controller' => 'ResepController', 'only' => ['index', 'show']]);
+    //$routes->resource('resep', ['controller' => 'ResepController', 'only' => ['index', 'show']]);
+    $routes->get('resep', 'ResepController::index');
+   $routes->get('resep/(:num)', 'ResepController::show/$1');
     $routes->get('resep/populer', 'ResepController::popular');
     $routes->get('resep/terbaru', 'ResepController::latest');
     $routes->get('resep/filter/(:any)', 'ResepController::filterByCategory/$1');

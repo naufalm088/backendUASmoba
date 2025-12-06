@@ -362,9 +362,7 @@ if (empty($recipeId)) {
         {
             //debug
             
-
             $currentUserId = $this->request->user->id ?? null; 
-            
 
     if (!$currentUserId) {
         return $this->failUnauthorized('User ID diperlukan.');
@@ -414,9 +412,9 @@ if (empty($recipeId)) {
 
 public function show($id = null)
 {
-    if ($id === 'saved'){
-        return $this->saved();
-    }
+    // if ($id === 'saved'){
+    //     return $this->saved();
+    // }
 
     if (!is_numeric($id)){
         return $this->fail('Id resep harus berupa angka', 400);
