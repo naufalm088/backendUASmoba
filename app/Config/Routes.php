@@ -33,6 +33,7 @@ $routes->group('api', function($routes) {
     // PROFIL PUBLIK
     $routes->get('profile/(:num)', 'ProfileController::get/$1');
 });
+    $routes->post('logout', 'AuthController::logout');
 
 // --------------------------------------------------------------------
 // 🔒 GRUP TERLINDUNGI API (PERLU TOKEN)
@@ -40,7 +41,7 @@ $routes->group('api', function($routes) {
 $routes->group('api', ['filter' => 'auth'], function($routes) {
     
     // AUTH TERPROTEKSI
-    $routes->post('logout', 'AuthController::logout');
+
     
     // PROFIL TERPROTEKSI
     $routes->put('profile', 'ProfileController::update');

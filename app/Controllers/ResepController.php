@@ -134,7 +134,7 @@ public function update($id = null)
     if ($resep['user_id'] != $currentUserId) {
         return $this->failForbidden('Anda tidak memiliki izin untuk memperbarui resep ini.');
     }
-    unset($data['id']);
+   
     // 5. Filter hanya field yang allowed di model
     $filteredData = [];
     $allowedFields = $this->model->allowedFields;
@@ -152,7 +152,7 @@ public function update($id = null)
     //     return $this->failNotFound('Resep dengan ID ' . $id . ' tidak ditemukan.');
     // }
 
-    // Ambil data dari request
+    //start blok pengambilan data
     $data = [];
     
     // Cek apakah request adalah JSON atau form-data
@@ -172,6 +172,9 @@ public function update($id = null)
     // Debugging - log data yang diterima
     log_message('debug', 'Update ResepController - ID: ' . $id . ', Data: ' . json_encode($data));
 
+   if (empty($data)) {
+        log_message('error', 'Request Body Kosong atau Gagal Parsing');
+    }
     // Hapus ID dari data update
     unset($data['id']);
 

@@ -11,7 +11,7 @@ class AuthFilter implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
          // Debug: cek URI yang diakses
-        log_message('debug', 'AuthFilter for URI: ' . $request->getUri()->getPath());
+       // log_message('debug', 'AuthFilter for URI: ' . $request->getUri()->getPath());
         
         $authHeader = $request->getHeaderLine('Authorization');
         
