@@ -299,6 +299,29 @@ public function update($id = null)
         public function bookmark()
         {
             $currentUserId = $this->request->user->id ?? null;
+            log_message('debug', 'CurrentUser ID in bookmark: ' . ($currentUserId ?? 'NULL'));
+              log_message('debug', 'User ID from JWT token: ' . ($currentUserId ?? 'NULL'));
+    
+                 // Get all request data
+    $rawInput = $this->request->getRawInput();
+    log_message('debug', 'Raw input (getRawInput): ' . json_encode($rawInput));
+     $contentType = $this->request->getHeaderLine('Content-Type');
+    log_message('debug', 'Content-Type: ' . $contentType);
+    
+      if (strpos($contentType, 'application/json') !== false) {
+        $input = $this->request->getJSON(true) ?: [];
+        log_message('debug', 'JSON input: ' . json_encode($input));
+        $recipeId = isset($input['recipe_id']) ? (int) $input['recipe_id'] : null;
+    } else {
+        $input = $this->request->getPost() ?: [];
+        log_message('debug', 'POST input: ' . json_encode($input));
+        $recipeId = isset($input['recipe_id']) ? (int) $input['recipe_id'] : null;
+    }
+    
+    log_message('debug', 'Recipe ID from request: ' . ($recipeId ?? 'NULL'));
+    log_message('debug', '====== BOOKMARK REQUEST END ======');
+    
+
             if (!$currentUserId) {
         return $this->failUnauthorized('Anda harus login untuk menyimpan resep.');
     }
@@ -359,7 +382,53 @@ if (empty($recipeId)) {
                 'message' => 'Resep berhasil disimpan.'
             ]);
         }
+// Di ResepController.php - Tambahkan fungsi unbookmark
+public function unbookmark()
+{
+    $currentUserId = $this->request->user->id ?? null;
+    log_message('debug', 'CurrentUser ID in unbookmark: ' . ($currentUserId ?? 'NULL'));
+    
+    if (!$currentUserId) {
+        return $this->failUnauthorized('Anda harus login untuk menghapus bookmark.');
+    }
+    
+    // Terima baik JSON ataupun form-data
+    $contentType = $this->request->getHeaderLine('Content-Type');
+    if (strpos($contentType, 'application/json') !== false) {
+        $input = $this->request->getJSON(true) ?: [];
+    } else {
+        $input = $this->request->getPost() ?: [];
+    }
 
+    log_message('debug', 'Unbookmark input: ' . json_encode($input));
+
+    $recipeId = isset($input['recipe_id']) ? (int) $input['recipe_id'] : null;
+    
+    if (empty($recipeId)) {
+        return $this->fail('Parameter `recipe_id` diperlukan.', 400);
+    }
+
+    // Pastikan resep ada
+    $recipe = $this->model->find($recipeId);
+    if (!$recipe) {
+        return $this->failNotFound('Resep dengan ID ' . $recipeId . ' tidak ditemukan.');
+    }
+
+    // Hapus dari saved_recipes
+    $savedModel = new \App\Models\SavedRecipeModel();
+    $deleted = $savedModel->where('user_id', $currentUserId)
+                          ->where('recipe_id', $recipeId)
+                          ->delete();
+
+    if ($deleted) {
+        return $this->respondDeleted([
+            'status' => true,
+            'message' => 'Resep berhasil dihapus dari bookmark.'
+        ]);
+    } else {
+        return $this->fail('Gagal menghapus bookmark.', 500);
+    }
+}
         // Ambil daftar resep yang disimpan oleh user
         public function saved()
         {
@@ -413,7 +482,10 @@ if (empty($recipeId)) {
             ]);
         }
 
-public function show($id = null)
+        
+
+
+        public function show($id = null)
 {
     // if ($id === 'saved'){
     //     return $this->saved();
