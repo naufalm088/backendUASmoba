@@ -482,8 +482,241 @@ public function unbookmark()
             ]);
         }
 
-        
+      // Contoh sederhana di CI4 controller
+    // Contoh sederhana di CI4 controller
+    // Tambahkan fungsi ini di ResepController.php setelah fungsi unbookmark()
 
+/**
+ * Menyimpan resep dari sumber eksternal (API pihak ketiga) ke database lokal
+ * POST /api/resep/save-external
+ */
+public function saveExternal()
+{
+    $currentUserId = $this->request->user->id ?? null;
+    
+    if (!$currentUserId) {
+        return $this->failUnauthorized('Anda harus login untuk menyimpan resep.');
+    }
+    
+    log_message('debug', '===== SAVE EXTERNAL REQUEST =====');
+    log_message('debug', 'User ID: ' . $currentUserId);
+    
+    // Ambil data JSON dari request Flutter
+    $contentType = $this->request->getHeaderLine('Content-Type');
+    if (strpos($contentType, 'application/json') !== false) {
+        $input = $this->request->getJSON(true) ?: [];
+    } else {
+        $input = $this->request->getPost() ?: [];
+    }
+    
+    log_message('debug', 'Input data: ' . json_encode($input));
+    
+    // Validasi data yang diperlukan
+    if (empty($input['title'])) {
+        log_message('error', 'Validation failed: title is empty');
+        return $this->fail('Judul resep tidak boleh kosong.', 400);
+    }
+    
+    if (empty($input['ingredients'])) {
+        return $this->fail('Bahan-bahan tidak boleh kosong.', 400);
+    }
+    
+    if (empty($input['steps'])) {
+        return $this->fail('Langkah-langkah tidak boleh kosong.', 400);
+    }
+    
+    // 1. SIMPAN KE TABEL RECIPES DULU
+    $recipeData = [
+        'user_id'      => $currentUserId,
+        'title'        => $input['title'] ?? '',
+        'kategori'     => $input['kategori'] ?? 'Umum',
+        'description'  => $input['description'] ?? '',
+        'ingredients'  => $input['ingredients'] ?? '',
+        'steps'        => $input['steps'] ?? '',
+        'time'         => $input['time'] ?? '0',
+        'difficulty'   => $input['difficulty'] ?? 'Mudah',
+        'image'        => $input['image'] ?? null, // URL gambar dari API eksternal
+        'created_at'   => date('Y-m-d H:i:s'),
+        'updated_at'   => date('Y-m-d H:i:s')
+    ];
+    
+    log_message('debug', 'Recipe data to save: ' . json_encode($recipeData));
+    
+    try {
+        // Simpan ke tabel recipes
+        $recipeId = $this->model->insert($recipeData, true); // true untuk mendapatkan ID
+        
+        if (!$recipeId) {
+            log_message('error', 'Failed to save recipe to database');
+            return $this->fail('Gagal menyimpan resep ke database.', 500);
+        }
+        
+        log_message('debug', 'Recipe saved with ID: ' . $recipeId);
+        
+        // 2. OTOMATIS SIMPAN KE SAVED_RECIPES (BOOKMARK)
+        $savedRecipeModel = new \App\Models\SavedRecipeModel();
+        
+        // Cek apakah sudah ada di saved_recipes
+        $existing = $savedRecipeModel->where([
+            'user_id' => $currentUserId,
+            'recipe_id' => $recipeId
+        ])->first();
+        
+        if (!$existing) {
+            $savedData = [
+                'user_id'   => $currentUserId,
+                'recipe_id' => $recipeId,
+                'created_at' => date('Y-m-d H:i:s')
+            ];
+            
+            $saved = $savedRecipeModel->insert($savedData);
+            
+            if (!$saved) {
+                log_message('warning', 'Recipe saved to recipes but failed to bookmark');
+                // Tidak return error, karena resep sudah tersimpan
+            } else {
+                log_message('debug', 'Recipe also bookmarked successfully');
+            }
+        } else {
+            log_message('debug', 'Recipe already bookmarked');
+        }
+        
+        // Ambil resep yang baru disimpan
+        $recipe = $this->model->find($recipeId);
+        
+        // Tambahkan URL gambar jika ada
+        $base = rtrim(base_url(), '/');
+        if (!empty($recipe['image'])) {
+            $recipe['image_url'] = $recipe['image'];
+        }
+        
+        log_message('debug', 'Recipe saved successfully');
+        log_message('debug', '===== SAVE EXTERNAL COMPLETE =====');
+        
+        return $this->respondCreated([
+            'status'  => true,
+            'message' => 'Resep berhasil disimpan ke koleksi Anda',
+            'data'    => $recipe
+        ]);
+        
+    } catch (\Exception $e) {
+        log_message('error', 'Error saving external recipe: ' . $e->getMessage());
+        log_message('error', 'Stack trace: ' . $e->getTraceAsString());
+        
+        return $this->fail('Terjadi kesalahan saat menyimpan resep: ' . $e->getMessage(), 500);
+    }
+}
+// public function saveExternal() {
+//        $currentUserId = $this->request->user->id ?? null;
+//      if (!$currentUserId) {
+//         return $this->failUnauthorized('Anda harus login untuk menyimpan resep.');
+//     }
+//     // Ambil data JSON dari request Flutter
+//     $input = $this->request->getJSON(true);
+    
+//     // Validasi data yang diperlukan
+//     if (empty($input['title'])) {
+//         return $this->fail('Judul resep tidak boleh kosong.', 400);
+//     }
+    
+//     if (empty($input['ingredients'])) {
+//         return $this->fail('Bahan-bahan tidak boleh kosong.', 400);
+//     }
+    
+//     if (empty($input['steps'])) {
+//         return $this->fail('Langkah-langkah tidak boleh kosong.', 400);
+//     }
+    
+//     // Siapkan data untuk disimpan
+//     $data = [
+//         'user_id' => $currentUserId,
+//         'title' => $input['title'] ?? '',
+//         'kategori' => $input['kategori'] ?? 'Umum',
+//         'description' => $input['description'] ?? '',
+//         'ingredients' => $input['ingredients'] ?? '',
+//         'steps' => $input['steps'] ?? '',
+//         'time' => $input['time'] ?? '0',
+//         'difficulty' => $input['difficulty'] ?? 'Mudah',
+//         'image' => $input['image'] ?? null, // Handle jika ada gambar dari API eksternal
+//         'created_at' => date('Y-m-d H:i:s'),
+//         'updated_at' => date('Y-m-d H:i:s')
+//     ];
+    
+//     try {
+//         // Simpan ke database
+//         $saved = $this->model->insert($data);
+        
+//         if ($saved) {
+//             $recipe = $this->model->find($saved);
+            
+//             return $this->respondCreated([
+//                 'status' => true,
+//                 'message' => 'Resep berhasil disimpan ke koleksi Anda',
+//                 'data' => $recipe
+//             ]);
+//         } else {
+//             return $this->fail('Gagal menyimpan resep ke database.', 500);
+//         }
+//     } catch (\Exception $e) {
+//         log_message('error', 'Error saving external recipe: ' . $e->getMessage());
+//         return $this->fail('Terjadi kesalahan saat menyimpan resep: ' . $e->getMessage(), 500);
+//     }
+
+//     // // 1. Verifikasi token
+//     // $this->validateToken();
+    
+//     // // 2. Ambil data dari request
+//     // $data = $this->request->getJSON(true);
+    
+//     // // 3. Simpan ke database
+//     // $recipeModel = new RecipeModel();
+//     // $saved = $recipeModel->insert($data);
+    
+//     // // 4. Kembalikan response
+//     // if ($saved) {
+//     //     $recipe = $recipeModel->find($saved);
+//     //     return $this->response->setJSON([
+//     //         'status' => 201,
+//     //         'message' => 'Resep berhasil disimpan',
+//     //         'data' => $recipe
+//     //     ]);
+//     // } else {
+//     //     return $this->response->setJSON([
+//     //         'status' => 400,
+//     //         'message' => 'Gagal menyimpan resep'
+//     //     ], 400);
+//     // }
+// }
+
+// private function validateToken() {
+//     $header = $this->request->getHeader('Authorization');
+//     if (!$header) {
+//         return $this->response->setJSON([
+//             'status' => 401,
+//             'message' => 'Token tidak ditemukan'
+//         ], 401);
+//     }
+    
+//     $token = str_replace('Bearer ', '', $header->getValue());
+//     // Validasi token dengan library JWT atau sesuai implementasi Anda
+//     // ...
+// }
+
+private function validateToken() {
+    $header = $this->request->getHeader('Authorization');
+    if (!$header) {
+        return $this->response->setJSON([
+            'status' => 401,
+            'message' => 'Token tidak ditemukan'
+        ], 401);
+    }
+    
+    $token = str_replace('Bearer ', '', $header->getValue());
+    // Validasi token dengan library JWT atau sesuai implementasi Anda
+    // ...
+}
+
+        
 
         public function show($id = null)
 {
@@ -508,4 +741,6 @@ public function unbookmark()
     // 3. Jika tidak ditemukan, kirim respons 404 (Not Found)
     return $this->failNotFound('Resep dengan ID ' . $id . ' tidak ditemukan');
 }
+
+
 }

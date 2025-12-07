@@ -1,0 +1,1369 @@
+ERROR - 2025-12-06 02:59:46 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 02:59:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:07:22 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:07:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:08:23 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:08:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:08:31 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:08:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:08:31 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'simpan')
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('simpan')
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->show('simpan', 'user', '1')
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'simpan')
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('simpan')
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->show('simpan', 'user', '1')
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:08:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep/simpan/user/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`
+WHERE `recipes`.`id` = :recipes.id:', [...], false)
+ 3 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'simpan')
+ 5 APPPATH\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('simpan')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->show('simpan', 'user', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:08:31 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'simpan')
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('simpan')
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->show('simpan', '1')
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'simpan')
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('simpan')
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->show('simpan', '1')
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:08:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep/simpan/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`
+WHERE `recipes`.`id` = :recipes.id:', [...], false)
+ 3 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'simpan')
+ 5 APPPATH\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('simpan')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->show('simpan', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:08:31 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'user')
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('user')
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->show('user', '1', 'simpan')
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'user')
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('user')
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->show('user', '1', 'simpan')
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:08:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep/user/1/simpan]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`
+WHERE `recipes`.`id` = :recipes.id:', [...], false)
+ 3 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'user')
+ 5 APPPATH\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('user')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->show('user', '1', 'simpan')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:08:32 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:08:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:08:32 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:08:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:08:36 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'user')
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('user')
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->show('user', '1')
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'user')
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('user')
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->show('user', '1')
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:08:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep/user/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`
+WHERE `recipes`.`id` = :recipes.id:', [...], false)
+ 3 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'user')
+ 5 APPPATH\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('user')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->show('user', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:08:36 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'user')
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('user')
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->show('user', '1')
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'user')
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('user')
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->show('user', '1')
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:08:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep/user/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`
+WHERE `recipes`.`id` = :recipes.id:', [...], false)
+ 3 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'user')
+ 5 APPPATH\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('user')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->show('user', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:08:36 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'user_id')
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('user_id')
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->show('user_id', '1')
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'user_id')
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('user_id')
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->show('user_id', '1')
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:08:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep/user_id/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`
+WHERE `recipes`.`id` = :recipes.id:', [...], false)
+ 3 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'user_id')
+ 5 APPPATH\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('user_id')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->show('user_id', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:08:37 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'user_id')
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('user_id')
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->show('user_id', '1')
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'user_id')
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('user_id')
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->show('user_id', '1')
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:08:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep/user_id/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`
+WHERE `recipes`.`id` = :recipes.id:', [...], false)
+ 3 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'user_id')
+ 5 APPPATH\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('user_id')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->show('user_id', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:08:37 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'userId')
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('userId')
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->show('userId', '1')
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'userId')
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('userId')
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->show('userId', '1')
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:08:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep/userId/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`
+WHERE `recipes`.`id` = :recipes.id:', [...], false)
+ 3 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'userId')
+ 5 APPPATH\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('userId')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->show('userId', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:08:37 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'userId')
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('userId')
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->show('userId', '1')
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'userId')
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('userId')
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->show('userId', '1')
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:08:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep/userId/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`
+WHERE `recipes`.`id` = :recipes.id:', [...], false)
+ 3 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, 'userId')
+ 5 APPPATH\Controllers\ResepController.php(330): CodeIgniter\BaseModel->find('userId')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->show('userId', '1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:08:38 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:08:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:08:38 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:08:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:08:38 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:08:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:08:38 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:08:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:08:43 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:08:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:09:58 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\ResepController->index()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:09:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: GET, Route: resep]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `recipes`', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\ResepController.php(18): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ResepController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ResepController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 03:10:15 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'uasmoba1', 3306, '', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\wamp64\www\backendUASmoba\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\wamp64\www\backendUASmoba\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#6 C:\wamp64\www\backendUASmoba\app\Controllers\LoginController.php(28): CodeIgniter\BaseModel->first()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\LoginController->login()
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#9 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\wamp64\www\backendUASmoba\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\wamp64\www\backendUASmoba\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#5 C:\wamp64\www\backendUASmoba\app\Controllers\LoginController.php(28): CodeIgniter\BaseModel->first()
+#6 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(933): App\Controllers\LoginController->login()
+#7 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 C:\wamp64\www\backendUASmoba\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\backendUASmoba\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\wamp64\www\backendUASmoba\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\wamp64\www\backendUASmoba\system\rewrite.php(44): require_once('C:\\wamp64\\www\\b...')
+#13 {main}
+CRITICAL - 2025-12-06 03:10:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\LoginController.php(28): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->login()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+ERROR - 2025-12-06 07:27:40 --> mysqli_sql_exception: Can't DROP 'recipes_user_id_foreign'; check that column/key exists in C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\wamp64\www\backendUASmoba\system\Database\MySQLi\Connection.php(327): mysqli->query('ALTER TABLE `re...', 0)
+#1 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('ALTER TABLE `re...')
+#2 C:\wamp64\www\backendUASmoba\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('ALTER TABLE `re...')
+#3 C:\wamp64\www\backendUASmoba\system\Database\Forge.php(539): CodeIgniter\Database\BaseConnection->query('ALTER TABLE `re...')
+#4 C:\wamp64\www\backendUASmoba\app\Database\Migrations\2025-12-06-072026_AddForeignKeyToRecipesMigration.php(17): CodeIgniter\Database\Forge->dropForeignKey('recipes', 'recipes_user_id...')
+#5 C:\wamp64\www\backendUASmoba\system\Database\MigrationRunner.php(876): App\Database\Migrations\AddForeignKeyToRecipesMigration->down()
+#6 C:\wamp64\www\backendUASmoba\system\Database\MigrationRunner.php(289): CodeIgniter\Database\MigrationRunner->migrate('down', Object(stdClass))
+#7 C:\wamp64\www\backendUASmoba\system\Commands\Database\MigrateRollback.php(101): CodeIgniter\Database\MigrationRunner->regress(0)
+#8 C:\wamp64\www\backendUASmoba\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRollback->run(Array)
+#9 C:\wamp64\www\backendUASmoba\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:rollbac...', Array)
+#10 C:\wamp64\www\backendUASmoba\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 C:\wamp64\www\backendUASmoba\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 C:\wamp64\www\backendUASmoba\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-06 09:08:30 --> CodeIgniter\Filters\Exceptions\FilterException: "jwt" filter must have a matching alias defined.
+[Method: GET, Route: api/myrecipes]
+in SYSTEMPATH\Filters\Filters.php on line 590.
+ 1 SYSTEMPATH\Filters\Filters.php(590): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('jwt')
+ 2 SYSTEMPATH\Filters\Filters.php(641): CodeIgniter\Filters\Filters->enableFilter('jwt', 'before')
+ 3 SYSTEMPATH\CodeIgniter.php(467): CodeIgniter\Filters\Filters->enableFilters([...], 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 09:19:03 --> Error: Class "App\Filters\JWTFilter" not found
+[Method: GET, Route: api/myrecipes]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\JWTFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/myrecipes', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 09:20:01 --> Error: Class "App\Filters\JWTFilter" not found
+[Method: GET, Route: api/myrecipes]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\JWTFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/myrecipes', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 09:58:40 --> Error: Class "App\Filters\JWTFilter" not found
+[Method: GET, Route: api/myrecipes]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\JWTFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/myrecipes', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 09:58:45 --> Error: Class "App\Filters\JWTFilter" not found
+[Method: GET, Route: api/myrecipes]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\JWTFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/myrecipes', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 09:58:45 --> Error: Class "App\Filters\JWTFilter" not found
+[Method: GET, Route: api/myrecipes]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\JWTFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/myrecipes', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 09:58:56 --> Error: Class "App\Filters\JWTFilter" not found
+[Method: GET, Route: api/myrecipes]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\JWTFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/myrecipes', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 09:59:10 --> Error: Class "App\Filters\JWTFilter" not found
+[Method: GET, Route: api/myrecipes]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\JWTFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/myrecipes', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 09:59:13 --> Error: Class "App\Filters\JWTFilter" not found
+[Method: GET, Route: api/myrecipes]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\JWTFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/myrecipes', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 09:59:21 --> Error: Class "App\Filters\JWTFilter" not found
+[Method: POST, Route: api/resep/bookmark]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\JWTFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/resep/bookmark', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 09:59:25 --> Error: Class "App\Filters\JWTFilter" not found
+[Method: POST, Route: api/resep/bookmark]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\JWTFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/resep/bookmark', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 10:00:05 --> Error: Class "App\Filters\JWTFilter" not found
+[Method: GET, Route: api/myrecipes]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\JWTFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/myrecipes', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 10:05:29 --> Error: Class "App\Filters\JWTFilter" not found
+[Method: GET, Route: api/myrecipes]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\JWTFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/myrecipes', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 10:05:32 --> Error: Class "App\Filters\JWTFilter" not found
+[Method: GET, Route: api/myrecipes]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\JWTFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/myrecipes', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 10:06:07 --> Error: Class "App\Filters\JWTFilter" not found
+[Method: POST, Route: api/resep]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\JWTFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/resep', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 10:07:57 --> Error: Class "App\Filters\JWTFilter" not found
+[Method: POST, Route: api/resep]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\JWTFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/resep', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 11:00:32 --> Error: Class "App\Filters\JWTFilter" not found
+[Method: GET, Route: api/myrecipes]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\JWTFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/myrecipes', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 11:06:04 --> Error: Class "App\Config\Filters\JWTFilter" not found
+[Method: GET, Route: api/myrecipes]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Config\\Filters\\JWTFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/myrecipes', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 11:06:25 --> Error: Class "App\Config\Filters\JWTFilters" not found
+[Method: GET, Route: api/myrecipes]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Config\\Filters\\JWTFilters')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/myrecipes', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')
+CRITICAL - 2025-12-06 11:11:25 --> Error: Class "App\Filters\JWTFilter" not found
+[Method: GET, Route: api/myrecipes]
+in SYSTEMPATH\Filters\Filters.php on line 299.
+ 1 SYSTEMPATH\Filters\Filters.php(239): CodeIgniter\Filters\Filters->createFilter('App\\Filters\\JWTFilter')
+ 2 SYSTEMPATH\Filters\Filters.php(221): CodeIgniter\Filters\Filters->runBefore([...])
+ 3 SYSTEMPATH\CodeIgniter.php(479): CodeIgniter\Filters\Filters->run('api/myrecipes', 'before')
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\wamp64\\www\\backendUASmoba\\public\\index.php')

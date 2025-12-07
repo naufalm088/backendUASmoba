@@ -55,7 +55,7 @@ $routes->group('api', ['filter' => 'auth'], function($routes) {
     $routes->get('resep/saved', 'ResepController::saved');
     $routes->post('resep/bookmark', 'ResepController::bookmark');
     $routes->delete('resep/bookmark', 'ResepController::unbookmark');
-    
+    $routes->post('resep/save-external', 'ResepController::saveExternal');
     // VALIDASI TOKEN
     $routes->get('validate-token', 'AuthController::validateTokenEndpoint');
 });
