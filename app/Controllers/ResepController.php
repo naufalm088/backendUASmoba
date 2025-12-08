@@ -31,6 +31,7 @@ class ResepController extends ResourceController
 
         $myRecipes = $this->model
         ->where('user_id', $currentUserId)
+        ->where('is_external', 0)
         ->findAll();
 
         if (empty($myRecipes)) {
@@ -43,9 +44,9 @@ class ResepController extends ResourceController
     //         $recipe['is_external'] = false;
     //     }
     // }
-      if (empty($myRecipes)) {
-        return $this->respond(['status' => true, 'data' => [], 'message' => 'Anda belum memiliki resep.']);
-    }
+    //   if (empty($myRecipes)) {
+    //     return $this->respond(['status' => true, 'data' => [], 'message' => 'Anda belum memiliki resep.']);
+    // }
 
         return $this->respond(['status' => true, 'data' => $myRecipes]);
     }
