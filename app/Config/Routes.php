@@ -12,7 +12,8 @@ $routes->get('/', 'Home::index');
 // --------------------------------------------------------------------
 
 // Registrasi dan Login - tanpa /api/ agar URL lebih pendek
-$routes->post('register', 'AuthController::register'); 
+$routes->post('registrasi', 'RegistrasiController::create');
+//$routes->post('register', 'AuthController::register'); 
 $routes->post('login', 'AuthController::login'); 
 
 // --------------------------------------------------------------------
@@ -50,6 +51,7 @@ $routes->group('api', ['filter' => 'auth'], function($routes) {
     // RESEP TERPROTEKSI
     $routes->post('resep', 'ResepController::create');
     $routes->put('resep/(:num)', 'ResepController::update/$1');
+    $routes->match(['put', 'post'], 'resep/update/(:num)', 'ResepController::update/$1'); // ✅ UPDATE INI
     $routes->delete('resep/(:num)', 'ResepController::delete/$1');
     $routes->get('myrecipes', 'ResepController::myRecipes');
     $routes->get('resep/saved', 'ResepController::saved');
